@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axioma da Indução e as Provas por Indução</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hakimel/reveal.js@v4.1.2/dist/reset.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hakimel/reveal.js@v4.1.2/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hakimel/reveal.js@v4.1.2/dist/theme/black.css" />
+    <link rel="stylesheet" href="/styles/theme/inventare.css" />
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <section>
+                <h1>Axiomas de Peano
+                    <small>E as provas por indução</small>
+                </h1>
+            </section>
+
+            <section>
+                <h3>Axiomas de Peano</h3>
+                <ol>
+                    <li class="fragment fade-in">
+                        Existe uma <b>função injetiva</b> \(s: \mathbb{N} \rightarrow \mathbb{N}\). A imagem \(s(n)\) de cada número natural \(n\in\mathbb{N}\) chama-se o sucessor de \(n\).
+                    </li>
+                    <li class="fragment fade-in">
+                        Existe um único número natural \(1\in\mathbb{N}\) tal que \(1\neq s(n)\) para todo \(n\in\mathbb{N}\).
+                    </li>
+                    <li class="fragment fade-in">
+                        Se um conjunto \(X\subset \mathbb{N}\) é tal que
+                        <ul>
+                            <li>\(1\in X\)</li>
+                            <li>Se \(n\in X\), então \( s(n)\in X \)</li>
+                        </ul>
+                        então, \(X=\mathbb{N}\).
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>Derrubando Infinitos Dominó's</h3>
+
+                <p class="fragment fade-in">
+                    Se \(n\in X\), então \( s(n)\in X \).
+                </p>
+            </section>
+
+            <section>
+                <img src="/images/domino/domino_distancias.svg" />
+            </section>
+
+            <section>
+                <h3>Derrubando Infinitos Dominó's</h3>
+                
+                <p class="fragment fade-in">
+                    \(1\in X\).
+                </p>
+            </section>
+
+            <section>
+                <h3>Derrubando Infinitos Dominó's</h3>
+
+                <ul>
+                    <li class="fragment fade-in">
+                        \( 1\in X \Longrightarrow s(1)=2\in X \)
+                    </li>
+                    <li class="fragment fade-in">
+                        \( 2\in X \Longrightarrow s(2)=3\in X \)
+                    </li>
+                    <li class="fragment fade-in">
+                        \( 3\in X \Longrightarrow s(3)=4\in X \)
+                    </li>
+                    <li class="fragment fade-in">
+                        \( 4\in X \Longrightarrow s(4)=5\in X \)
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <img src="/images/domino/domino_cai.svg" />
+            </section>
+
+            <section>
+                <h3>
+                    Os <b>Axiomas de Peano</b> caracterizam os números naturais
+                </h3>
+            </section>
+
+            <section>
+                <h3>Função Injetiva</h3>
+
+                <p>
+                    O fato de \(s: \mathbb{N}\rightarrow\mathbb{N}\), <b>função sucessor</b>, ser <b>injetiva</b> garante que dados dois números naturais diferentes, seus sucessores serão diferentes.
+                </p>
+            </section>
+
+            <section>
+                <h3>Axioma da Indução</h3>
+
+                <p class="fragment fade-in" style="text-align: left;">O terceiro axioma é chamado de <b>Axioma da Indução</b>.</p>
+
+                <p class="fragment fade-in" style="text-align: left;">
+                    Se um conjunto \(X\subset \mathbb{N}\) é tal que
+                </p>
+                <ul>
+                    <li class="fragment fade-in">\(1\in X\)</li>
+                    <li class="fragment fade-in">Se \(n\in X\), então \( s(n)\in X \)</li>
+                </ul>
+                <p class="fragment fade-in" style="text-align: left;">
+                    então, \(X=\mathbb{N}\).
+                </p>
+            </section>
+
+            <section>
+                <h3>Demonstrações por Indução</h3>
+
+                <p class="fragment fade-in" style="text-align: left;">A <b>demonstração por indução</b>, geralmente, é feita com base no seguinte procedimento:</p>
+                <p class="fragment fade-in" style="text-align: left;">Dada uma propriedade qualquer,</p>
+                <ul>
+                    <li class="fragment fade-in">Prova-se que ela é válida para 1.</li>
+                    <li class="fragment fade-in">Supõe-se que é válida para \(n\) e, então, prova-se para \(n+1\).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Qual é, de fato, a relação entre o Axioma da Indução e essa forma de se provar por Indução?</h2>
+            </section>
+
+            <section>
+                <h3>Implicitamente</h3>
+                <ol>
+                    <li class="fragment fade-in">
+                        Definirmos um conjunto \( X\subset \mathbb{N} \), onde a propriedade de interesse é válida.
+                    </li>
+                    <li class="fragment fade-in">
+                        Provamos que \( 1\in X \), ou seja, que a propriedade é válida para 1.
+                    </li>
+                    <li class="fragment fade-in">
+                        Supomos que a propriedade vale para \(n\), ou seja, que \(n\in X\).
+                    </li>
+                    <li class="fragment fade-in">
+                        Provamos que se, \(n\in X\), então \(n+1 \in X\), ou seja, que se a propriedade vale para \(n\), ela também vale para \(n+1\).
+                    </li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>Implicitamente</h3>
+
+                <p class="fragment fade-in">Assim, pelo Axioma da Indução \(X=\mathbb{N}\), ou seja, a propriedade vale para todo número natural.</p>
+            </section>
+
+            <section>
+                <h3>Referências</h3>
+
+            </section>
+
+            <section>
+                <h3>Tecnologias</h3>
+
+
+            </section>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/hakimel/reveal.js@v4.1.2/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hakimel/reveal.js@v4.1.2/plugin/math/math.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [ RevealMath ]
+        });
+    </script>
+</body>
+</html>
