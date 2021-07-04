@@ -1,2 +1,4 @@
+lang: "pt_BR"
+ssl: true
 baseurl: ""
 url: "https://slides.institutoinventare.com.br"
